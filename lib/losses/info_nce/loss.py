@@ -78,7 +78,7 @@ def _scan_reduce(x0, x1, reducer, block_size):
     def reshape(x):
         return jnp.ravel(x)[:x0_shape0]
 
-    return jax.tree_map(reshape, accu)
+    return jax.tree_util.tree_map(reshape, accu)
 
 
 def asym_corr_cross_entropy(
